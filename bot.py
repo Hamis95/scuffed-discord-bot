@@ -99,4 +99,4 @@ async def play(ctx, url):
 
 
 
-client.run('Njc2OTIwMzAxNjg2MDk1ODky.XkMtKA.djS8fqMagBMgt-qzXpZd_Vawthk')  # <============ put your bot token here and invite it to your channel
+client.run('xXxxxXXXXXXXXxxxXxxxxXxxXXXxxxxxxXX')  # <============ put your bot token here and invite it to your channel
