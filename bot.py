@@ -1,22 +1,22 @@
 import discord
-from discord.ext import commands
+from discord.ext import commands                    #I run this bot from a raspberry pi 4
 from discord.utils import get
 import youtube_dl
 from discord.ext import commands
 import os
-client = commands.Bot(command_prefix = '.')
+client = commands.Bot(command_prefix = '.') #prefix is the symbol you put before every command. "#¤%&&//)))")¤()¤"_;_: you can choose pretty much anything.
 
 
 
 @client.event
 async def on_ready():
-    await client.change_presence(activity=discord.Game('Hentai Sniper'))
-    print('botti valmis.')
+    await client.change_presence(activity=discord.Game('Hentai Sniper')) #Write here the game you want the bot to appear to be playing
+    print('botti valmis.') #the message you get when the bot is ready and functional
 
 
 @client.command()
 async def onnistuu(ctx):
-    await ctx.send(file=discord.File('/home/pi/Desktop/bottifile/onnistuu.jpg'))
+    await ctx.send(file=discord.File('/home/pi/Desktop/bottifile/onnistuu.jpg')) #The path to a file you want the bot to sent to your channel you can also use url
 
 @client.command()
 async def apustaja(ctx):
@@ -53,7 +53,7 @@ async def join(ctx):
     voice = get(client.voice_clients, guild=ctx.guild)
 
     if voice and voice.is_connected():
-        await voice.move_to(channel)
+        await voice.move_to(channel)                                    #   <============= channel joining feature (no real usage with this code)
     else:
         voice = await channel.connect()
 
@@ -68,7 +68,7 @@ async def join(ctx):
 async def leave(ctx):
     global voice
     channel = ctx.message.author.voice.channel
-    voice = get(client.voice_clients, guild=ctx.guild)
+    voice = get(client.voice_clients, guild=ctx.guild)                  # <===================== this is how you make the bot leave after you realise it does not play anything
     if voice.is_connected():
         await voice.disconnect()
 
@@ -99,4 +99,4 @@ async def play(ctx, url):
 
 
 
-client.run('Njc2OTIwMzAxNjg2MDk1ODky.XkMtKA.djS8fqMagBMgt-qzXpZd_Vawthk')
+client.run('Njc2OTIwMzAxNjg2MDk1ODky.XkMtKA.djS8fqMagBMgt-qzXpZd_Vawthk')  # <============ put your bot token here and invite it to your channel
